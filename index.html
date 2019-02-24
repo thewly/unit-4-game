@@ -12,6 +12,7 @@
 <body>
 
     <h1>Number to Guess: <span id="number-to-guess"></span></h1>
+    <h1>My score: <span id="whatIGot"></span></h1>
 
     <div id="crystal1">
         <img class="picture" src="assets/images/Crystal1-edited.jpg">
@@ -27,31 +28,56 @@
     </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
-// !!!I need to get the target number to randomize!!!
-        function randomCompInt(min, max) {
-            min = Math.ceil(50);
-            max = math.floor(99);
-            return Math.floor(Math.random() * (max-min)) + min;
-        }
-        
-        var targetNumber = randomCompInt;
+// This generates the random number to start the game
+        var targetNumber = randomCompInt(50, 99);
+        var clickCounter = 0;
+        var crystalValues = [10, 15, 5, 1];
+        var crystal1Val = crystalValues[randomCompInt(0, 3)];
+        // if crystal1Val is in crystalValues, remove it
+
+        var indexOfValue = crystalValues.indexOf(crystal1Val);
+        console.log(indexOfValue);
+        // if (indexOfVal > -1) {
+        //     remove it
+        // }
 
         $("#number-to-guess").text(targetNumber);
-        var clickCounter = 0;
+        $("#whatIGot").text(clickCounter);
+        
+        function reset() {
+            clickCounter = 0;
+            targetNumber = randomCompInt(50, 99);
+            $("#number-to-guess").text(targetNumber);
+        }
 
-        var numberOptions = [10]
+        function randomCompInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max-min+1)) + min;
+        }
 
-        $("#crystal1").on("click", function () {
-// !!! I need to get the crystals' counter to randomize !!!
-            clickCounter += 10;
-            console.log("Click counter: " + clickCounter);
-
+        function winLose () {
             if (clickCounter === targetNumber) {
                 alert("You Win!");
+                reset();
             }
-            else if (clickcounter >= targetNumber) {
+            else if (clickCounter >= targetNumber) {
                 alert("You Lose!");
+                reset();
             }
+        }
+// These are the crystals that interact for the game
+// I need each crystal to select one of the values from "crystalValues"
+        
+        $("#crystal1").on("click", function () {
+            clickCounter += crystal1Val;
+            winLose();
+            $("#whatIGot").text(clickCounter);
+        })
+        $("#crystal2").on("click", function () {
+            clickCounter += crystal2Val;
+            winLose();
+            $("#whatIGot").text(clickCounter);
         })
 
     </script>
