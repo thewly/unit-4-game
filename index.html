@@ -33,14 +33,20 @@
         var clickCounter = 0;
         var crystalValues = [10, 15, 5, 1];
         var crystal1Val = crystalValues[randomCompInt(0, 3)];
-        // if crystal1Val is in crystalValues, remove it
-
+        var crystal2Val = crystalValues[randomCompInt(0, 2)];
+        var crystal3Val = crystalValues[randomCompInt(0, 1)];
+        var crystal4Val = crystalValues[0];
+// ******** I need to remove a value from the array in line 34 as values are assigned to crystals
         var indexOfValue = crystalValues.indexOf(crystal1Val);
-        console.log(indexOfValue);
+        
         if (indexOfValue > -1) {
             crystalValues.splice(indexOfValue, 1);
         }
-        console.log(crystalValues);
+
+        console.log("Crystal 1 value: " + crystal1Val);
+        console.log("Crystal 2 value: " + crystal2Val);
+        console.log("What's left in my array: " + crystalValues);
+
         $("#number-to-guess").text(targetNumber);
         $("#whatIGot").text(clickCounter);
         
