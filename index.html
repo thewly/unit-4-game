@@ -37,10 +37,10 @@
 
         var indexOfValue = crystalValues.indexOf(crystal1Val);
         console.log(indexOfValue);
-        // if (indexOfVal > -1) {
-        //     remove it
-        // }
-
+        if (indexOfValue > -1) {
+            crystalValues.splice(indexOfValue, 1);
+        }
+        console.log(crystalValues);
         $("#number-to-guess").text(targetNumber);
         $("#whatIGot").text(clickCounter);
         
