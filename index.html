@@ -39,14 +39,12 @@
 // ******** I need to remove a value from the array in line 34 as values are assigned to crystals
         var indexOfValue = crystalValues.indexOf(crystal1Val);
         
-        for (i=0; i > -1; i++) {
-            crystalValues.splice(indexOfValue, 1);
-            indexOfValue = crystalValues.indexOf(crystal2Val);
-            crystalValues.splice(indexOfValue, 1);
-            indexOfValue = crystalValues.indexOf(crystal3Val);
-            crystalValues.splice(indexOfValue, 1);
-            indexOfValue = crystalValues.indexOf(crystal4Val);
-        }
+        crystalValues.splice(indexOfValue, 1);
+        indexOfValue = crystalValues.indexOf(crystal2Val);
+        crystalValues.splice(indexOfValue, 1);
+        indexOfValue = crystalValues.indexOf(crystal3Val);
+        crystalValues.splice(indexOfValue, 1);
+        indexOfValue = crystalValues.indexOf(crystal4Val);
 
         console.log("Crystal 1 value: " + crystal1Val);
         console.log("Crystal 2 value: " + crystal2Val);
