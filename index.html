@@ -32,23 +32,29 @@
         var targetNumber = randomCompInt(50, 99);
         var clickCounter = 0;
         var crystalValues = [10, 15, 5, 1];
-        var crystal1Val = crystalValues[randomCompInt(0, 3)];
-        var crystal2Val = crystalValues[randomCompInt(0, 2)];
-        var crystal3Val = crystalValues[randomCompInt(0, 1)];
-        var crystal4Val = crystalValues[0];
-// ******** I need to remove a value from the array in line 34 as values are assigned to crystals
-        var indexOfValue = crystalValues.indexOf(crystal1Val);
+
+        var crystalOnePlace = randomCompInt(0, 3);
+        var crystal1Val = crystalValues[crystalOnePlace];
+        crystalValues = crystalValues.splice(crystalOnePlace, 1);
         
-        crystalValues.splice(indexOfValue, 1);
-        indexOfValue = crystalValues.indexOf(crystal2Val);
-        crystalValues.splice(indexOfValue, 1);
-        indexOfValue = crystalValues.indexOf(crystal3Val);
-        crystalValues.splice(indexOfValue, 1);
-        indexOfValue = crystalValues.indexOf(crystal4Val);
+        console.log("What's left in my array: " + crystalValues);
+
+        var crystalTwoPlace = randomCompInt(0, 2);
+        var crystal2Val = crystalValues[crystalTwoPlace];
+        crystalValues = crystalValues.splice(crystalTwoPlace, 1);
+
+        console.log("What's left in my array: " + crystalValues);
+
+        var crystalThreePlace = randomCompInt(0, 1);
+        var crystal3Val = crystalValues[crystalThreePlace];
+        crystalValues = crystalValues.splice(crystalThreePlace, 1);
+        
+        console.log("What's left in my array: " + crystalValues);
+
+        var crystal4Val = crystalValues[0];
 
         console.log("Crystal 1 value: " + crystal1Val);
         console.log("Crystal 2 value: " + crystal2Val);
-        console.log("What's left in my array: " + crystalValues);
         console.log("Crystal 3 value: " + crystal3Val);
         console.log("Crystal 4 value: " + crystal4Val);
         console.log("What's left in my array: " + crystalValues);
@@ -65,7 +71,9 @@
         function randomCompInt(min, max) {
             min = Math.ceil(min);
             max = Math.floor(max);
-            return Math.floor(Math.random() * (max-min+1)) + min;
+            var num = Math.floor(Math.random() * (max-min+1)) + min;
+            console.log(num);   
+            return num;
         }
 
         function winLose () {
