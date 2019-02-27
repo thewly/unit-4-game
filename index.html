@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,9 @@
 <body>
 
     <h1>Number to Guess: <span id="number-to-guess"></span></h1>
-    <h1>My score: <span id="whatIGot"></span></h1>
+    <h1>My number: <span id="whatIGot"></span></h1>
+    <h2>Win counter: <span id="winTracker"></span></h2>
+    <h2>Loss counter: <span id="lossTracker"></span></h2>
 
     <div id="crystal1">
         <img class="picture" src="assets/images/Crystal1-edited.jpg">
@@ -27,80 +30,7 @@
         <img class="picture" src="assets/images/Crystal4-edited.jpg">
     </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript">
-// This generates the random number to start the game
-        var targetNumber = randomCompInt(50, 99);
-        var clickCounter = 0;
-        var crystalValues = [10, 15, 5, 1];
-
-        var crystalOnePlace = randomCompInt(0, 3);
-        var crystal1Val = crystalValues[crystalOnePlace];
-        crystalValues = crystalValues.splice(crystalOnePlace, 1);
-        
-        console.log("What's left in my array: " + crystalValues);
-
-        var crystalTwoPlace = randomCompInt(0, 2);
-        var crystal2Val = crystalValues[crystalTwoPlace];
-        crystalValues = crystalValues.splice(crystalTwoPlace, 1);
-
-        console.log("What's left in my array: " + crystalValues);
-
-        var crystalThreePlace = randomCompInt(0, 1);
-        var crystal3Val = crystalValues[crystalThreePlace];
-        crystalValues = crystalValues.splice(crystalThreePlace, 1);
-        
-        console.log("What's left in my array: " + crystalValues);
-
-        var crystal4Val = crystalValues[0];
-
-        console.log("Crystal 1 value: " + crystal1Val);
-        console.log("Crystal 2 value: " + crystal2Val);
-        console.log("Crystal 3 value: " + crystal3Val);
-        console.log("Crystal 4 value: " + crystal4Val);
-        console.log("What's left in my array: " + crystalValues);
-
-        $("#number-to-guess").text(targetNumber);
-        $("#whatIGot").text(clickCounter);
-        
-        function reset() {
-            clickCounter = 0;
-            targetNumber = randomCompInt(50, 99);
-            $("#number-to-guess").text(targetNumber);
-        }
-
-        function randomCompInt(min, max) {
-            min = Math.ceil(min);
-            max = Math.floor(max);
-            var num = Math.floor(Math.random() * (max-min+1)) + min;
-            console.log(num);   
-            return num;
-        }
-
-        function winLose () {
-            if (clickCounter === targetNumber) {
-                alert("You Win!");
-                reset();
-            }
-            else if (clickCounter >= targetNumber) {
-                alert("You Lose!");
-                reset();
-            }
-        }
-// These are the crystals that interact for the game
-// I need each crystal to select one of the values from "crystalValues"
-        
-        $("#crystal1").on("click", function () {
-            clickCounter += crystal1Val;
-            winLose();
-            $("#whatIGot").text(clickCounter);
-        })
-        $("#crystal2").on("click", function () {
-            clickCounter += crystal2Val;
-            winLose();
-            $("#whatIGot").text(clickCounter);
-        })
-
-    </script>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 
 </html>
