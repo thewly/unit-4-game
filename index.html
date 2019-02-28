@@ -6,28 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <title>Crystal Game</title>
 </head>
 
-<body>
+<body class="dat-background-tho">
 
-    <h1>Number to Guess: <span id="number-to-guess"></span></h1>
-    <h1>My number: <span id="whatIGot"></span></h1>
-    <h2>Win counter: <span id="winTracker"></span></h2>
-    <h2>Loss counter: <span id="lossTracker"></span></h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <!-- empty side spacer -->
+            </div>
+            <div class="col-md-8">
+                <div class="card giveMeMoreSpace">
+                    <div class="card-body">
+                        <h3>Number to Guess: <span id="number-to-guess"></span></h3>
+                        <h3>My number: <span id="whatIGot"></span></h3>
+                        <h5>Win counter: <span id="winTracker"></span></h5>
+                        <h5>Loss counter: <span id="lossTracker"></span></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <!-- empty side spacer -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <!-- empty side spacer -->
+            </div>
+            <div class="col-md-8">
+                <div class="card giveMeSpace">
+                    <div class="card-body">
+                        <div class="row">
+                            
+                            <div class="col-lg-3 col-md-6" id="crystal1">
+                                <img class="picture rounded" src="assets/images/Crystal1-edited.jpg">
+                            </div>
+                            <div class="col-lg-3 col-md-6" id="crystal2">
+                                <img class="picture rounded" src="assets/images/Crystal2-edited.jpg">
+                            </div>
+                            <div class="col-lg-3 col-md-6" id="crystal3">
+                                <img class="picture rounded" src="assets/images/Crystal3-edited.jpg">
+                            </div>
+                            <div class="col-lg-3 col-md-6" id="crystal4">
+                                <img class="picture rounded" src="assets/images/Crystal4-edited.jpg">
+                            </div>
+                        </div>
 
-    <div id="crystal1">
-        <img class="picture" src="assets/images/Crystal1-edited.jpg">
-    </div>
-    <div id="crystal2">
-        <img class="picture" src="assets/images/Crystal2-edited.jpg">
-    </div>
-    <div id="crystal3">
-        <img class="picture" src="assets/images/Crystal3-edited.jpg">
-    </div>
-    <div id="crystal4">
-        <img class="picture" src="assets/images/Crystal4-edited.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <!-- empty side spacer -->
+            </div>
+        </div>
     </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/javascript/game.js"></script>

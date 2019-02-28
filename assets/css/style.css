@@ -1,7 +1,22 @@
+
+
 .picture {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
+   
 }
-div {
+/* div {
     display: inline-block
+} */
+.giveMeSpace {
+    margin-top: 1rem;
+}
+.giveMeMoreSpace {
+    margin-top: 5rem;
+}
+.dat-background-tho {
+    background-image: url("../images/background.jpg");
+    background-repeat: repeat;
+    background-color: blueviolet;
+   
 }

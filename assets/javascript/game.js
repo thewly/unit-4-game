@@ -1,9 +1,21 @@
 // estblish the first array, score, etc
-var targetNumber = randomCompInt(50, 99);
+var targetNumber = randomCompInt(19, 120);
 var clickCounter = 0;
-var crystalValues = [10, 15, 5, 1];
+var crystalValues = [10, 12, 5, 1];
 var maWins = 0;
 var maLosses = 0;
+
+// If I wanted to do what the homework asks for I could do this instead
+// -of what I did. But I wanted to guarantee a set of 4 functional numbers
+// -that would guarantee a win, & went through the array method.
+
+// function crystalValues() {
+//     var crystal1Val = randomCompInt(1, 12);
+//     var crystal2Val = randomCompInt(1, 12);
+//     var crystal3Val = randomCompInt(1, 12);
+//     var crystal4Val = randomCompInt(1, 12);
+// }
+// crystalValues();
 
 // assign each crystal a value
 var crystalOnePlace = randomCompInt(0, 3);
@@ -30,7 +42,8 @@ console.log("Crystal 4's value: " + crystal4Val);
 
 // This reassigns Crystals values upon reset 
 function newCrystals() {
-    crystalValues = [10, 15, 5, 1];
+    console.log("New Game Crystal Values:")
+    crystalValues = [10, 12, 5, 1];
 
     crystalOnePlace = randomCompInt(0, 3);
     crystal1Val = crystalValues[crystalOnePlace];
